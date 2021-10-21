@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Products from "../components/ProductGrid";
 
 export default function Home() {
   return (
@@ -14,47 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>HEMMABRYGGERIETS.SE</h1>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <img src="./beer.jpg"></img>
-            <h2>BILD PÅ ÖL</h2>
-          </a>
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <img src="beer.jpg"></img>
-            <h2>BILD PÅ ÖL</h2>
-          </a>
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <img src="beer.jpg"></img>
-            <h2>BILD PÅ ÖL</h2>
-          </a>
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <img src="beer.jpg"></img>
-            <h2>BILD PÅ ÖL</h2>
-          </a>
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <img src="beer.jpg"></img>
-            <h2>BILD PÅ ÖL</h2>
-          </a>
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <img src="beer.jpg"></img>
-            <h2>BILD PÅ ÖL</h2>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <img src="beer.jpg"></img>
-            <h2>BILD PÅ ÖL</h2>
-          </a>
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <img src="beer.jpg"></img>
-            <h2>BILD PÅ ÖL</h2>
-          </a>
-        </div>
+        <Products></Products>
       </main>
 
       <footer className={styles.footer}>
