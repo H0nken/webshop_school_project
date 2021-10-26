@@ -14,8 +14,9 @@ import useCart from '../../lib/hooks/useCart'
 import { CART_ACTIONS } from '../../lib/reducers/cartReducer'
 
 export default function Post({ product }) {
+
+  //custom hook för att komma åt cart och cartDispatcher (i.e cartContext)
   const cart = useCart()
-  console.log("product", product)
   if (!product) {
     return (
       <>
@@ -85,6 +86,8 @@ export default function Post({ product }) {
                 </Link>
                 <Button as={Col} className={styles.buttonAddToCart} onClick={() => cart.cartDispatch({ type: CART_ACTIONS.ADD, payload: product[0] })}> Add to cart</Button>
               </Row>
+              <div>This is the name of the cart: {cart.cart.user}</div>
+              <div>These items are in the cart: idk lol kolla konsolen{console.log("cart.cart.cartItems", cart.cart.cartItems)}</div>
             </Card.Body>
           </Card>
         </Container>
