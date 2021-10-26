@@ -4,6 +4,9 @@ import styles from "../styles/Home.module.css"
 import Link from "next/link"
 import imagePlaceholder from "../images/imagenotfound.png"
 import { useEffect, useState, useRef } from "react"
+import { CartContext } from '../components/context/CartProvider'
+
+
 export default function Home({ data }) {
   const [beers, setBeers] = useState(data)
   const [searchMode, setSearchMode] = useState("beer_name")
@@ -34,7 +37,7 @@ export default function Home({ data }) {
   }, [searchValue, searchMode])
 
 
-  return (
+  return (<>
     <div className={styles.container}>
       <Head>
         <title>Brewdog</title>
@@ -82,6 +85,7 @@ export default function Home({ data }) {
         </div>
       </main>
     </div>
+  </>
   )
 }
 //}

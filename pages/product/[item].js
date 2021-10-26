@@ -10,8 +10,11 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Accordion from 'react-bootstrap/Accordion'
 import loadingImage from '../../images/loadingImage.gif'
+import useCart from '../../lib/hooks/useCart'
+import { CART_ACTIONS } from '../../lib/reducers/cartReducer'
 
 export default function Post({ product }) {
+  const cart = useCart()
   console.log("product", product)
   if (!product) {
     return (
@@ -80,7 +83,7 @@ export default function Post({ product }) {
                 <Link href={`/`}>
                   <Button className={styles.buttonBack} as={Col}>Go Back</Button>
                 </Link>
-                <Button as={Col} className={styles.buttonAddToCart} onClick={(() => { alert(`"Tillagt" i "korgen"!\n\n\nnot really tho`) })}> Add to cart</Button>
+                <Button as={Col} className={styles.buttonAddToCart} onClick={() => cart.cartDispatch({ type: CART_ACTIONS.ADD, payload: product[0] })}> Add to cart</Button>
               </Row>
             </Card.Body>
           </Card>
